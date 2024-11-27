@@ -2,13 +2,19 @@ pipeline{
   agent any
   stages{
     stage('Build Docker'){
-      bat 'docker build -t node-app .'
+      steps{
+        bat 'docker build -t node-app .'
+      }
     }
     stage('Tests'){
-      echo 'Running Tests'
+      steps{
+        echo 'Running Tests'
+      }
     }
     stage('Deploy'){
-      echo 'Deploying'
+      steps{
+        echo 'Deploying'
+      }
     }
   }
 }
